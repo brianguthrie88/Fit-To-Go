@@ -1,38 +1,68 @@
 const router = require('express').Router();
-// Import the Project model from the models folder
-const { Project } = require('../../models');
+const { Gallery, Painting } = require('../models');
 
-// If a POST request is made to /api/projects, a new project is created. If there is an error, the function returns with a 400 error. 
-router.post('/', async (req, res) => {
+// GET all galleries for homepage
+router.get('/', async (req, res) => {
   try {
-    const newProject = await Project.create({
-      ...req.body,
-      user_id: req.session.user_id,
+    const dbGalleryData = await Gallery.findAll({
+      include: [
+        {
+          model: Painting,
+          attributes: ['filename', 'description'],
+        },
+      ],
     });
 
-    res.status(200).json(newProject);
+    const galleries = dbGalleryData.map((gallery) =>
+      gallery.get({ plain: true })
+    );
+
+    res.render('homepage', {
+      galleries,
+    });
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
-// If a DELETE request is made to /api/projects/:id, that project is deleted. 
-router.delete('/:id', async (req, res) => {
+// GET one gallery
+router.get('/gallery/:id', async (req, res) => {
   try {
-    const projectData = await Project.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
+    const dbGalleryData = await Gallery.findByPk(req.params.id, {
+      include: [
+        {
+          model: Painting,
+          attributes: [
+            'id',
+            'title',
+            'artist',
+            'exhibition_date',
+            'filename',
+            'description',
+          ],
+        },
+      ],
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
-      return;
-    }
-
-    res.status(200).json(projectData);
+    const gallery = dbGalleryData.get({ plain: true });
+    res.render('gallery', { gallery });
   } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one painting
+router.get('/painting/:id', async (req, res) => {
+  try {
+    const dbPaintingData = await Painting.findByPk(req.params.id);
+
+    const painting = dbPaintingData.get({ plain: true });
+
+    res.render('painting', { painting });
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
