@@ -1,1 +1,0 @@
-// Model for the different type of workouts
