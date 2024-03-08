@@ -1,0 +1,113 @@
+[
+    {
+      "name": "Push Up",
+      "muscle_group": "upperbody",
+      "body_weight": true,
+      "description": "Assume a strong plank position, hands stacked directly below elbows and shoulders (A), bend your elbows to slowly lower your chest to the floor (B). Keep your upper arms from flaring as you push back up explosively to a straight arm position. Repeat.",
+      "reps": 30
+    },
+    {
+        "name": "Standing Shoulder Press",
+        "muscle_group": "upperbody",
+        "body_weight": false,
+        "description": "Clean a pair of dumbbells onto your shoulders. Take a breath, squeeze your glutes and create tension through your core. (A) With no assistance from your legs, Press both dumbbells up overhead (B) Lower them under slow control to your shoulders and repeat.",
+        "reps": 10,
+        "intervals": 3
+    },
+    {
+        "name": "Arm Curls",
+        "muscle_group": "upperbody",
+        "body_weight": false,
+        "description": "Hold your heavier dumbbells with an underhand, shoulder-width grip by your sides. Exhale, curling the weight to your chest, keeping your upper arms stationary, elbows at sides. Pause, then lower back to the starting position.",
+        "reps": 10,
+        "intervals": 3
+    },
+    {
+        "name": "Single-Arm Dumbell Row",
+        "muscle_group": "back",
+        "body_weight": false,
+        "description": "From standing with a dumbbell in one hand at your side, step the opposite foot back into a lunge. Lean chest slightly forward and place free hand on thigh. Dumbbell should be in line with front knee. Engage your back and shoulder as you drive elbow back towards ceiling, bringing dumbbell in line with chest. Return to start. Switch sides; repeat.",
+        "reps": 8,
+        "intervals": 3
+    },
+    {
+        "name": "Wide Grip Bent-Over Row",
+        "muscle_group": "back",
+        "body_weight": false,
+        "description": "Hold your heavier dumbbells with an overhand grip, keeping your hands shoulder-width apart. With a straight back and legs slightly bent, bend your upper body until it’s perpendicular to the ground. (To modify, lower back knee to the ground as pictured above.) Keeping your elbows wide and palms facing your body, row the dumbbells towards your chest on an exhale. Hold it for a breath, then inhale, returning to starting position.",
+        "reps": 8,
+        "intervals": 3
+    },
+    {
+        "name": "Dumbell Romanian Deadlift",
+        "muscle_group": "back",
+        "body_weight": false,
+        "description": "Grasp two dumbbells and hold them with feet set hip-width apart. Keeping your lower back in its natural arch, bend hips back, your torso forward, and lower yourself until you feel a stretch in your hamstrings. You may bend at the knees. Squeeze your glutes at the top of the movement after coming back up.",
+        "reps": 8,
+        "intervals": 3
+    },
+    {
+        "name": "Russian Twist",
+        "muscle_group": "core",
+        "body_weight": true,
+        "description": "Sit on the floor with your feet in front of you and your knees bent. Slowly lean back to approximately 45 degrees with respect to your torso angle. The further back you sit, the more challenged your core will be. Stop leaning back at the point where you feel your core engage. Slowly rotate from your shoulders left and right, gently twisting the trunk. Make sure to perform this movement with a slow and controlled tempo.",
+        "reps": 15,
+        "intervals": 3
+    },
+    {
+        "name": "Russian Twist",
+        "muscle_group": "core",
+        "body_weight": true,
+        "description": "Sit on the floor with your feet in front of you and your knees bent. Slowly lean back to approximately 45 degrees with respect to your torso angle. The further back you sit, the more challenged your core will be. Stop leaning back at the point where you feel your core engage. Slowly rotate from your shoulders left and right, gently twisting the trunk. Make sure to perform this movement with a slow and controlled tempo.",
+        "reps": 15,
+        "intervals": 3
+    },
+    {
+        "name": "Hollow Hold",
+        "muscle_group": "core",
+        "body_weight": true,
+        "description": "Begin by laying flat on your back with your arms stretched overhead and your toes pointed. Simultaneously lift your head and legs from the floor, allowing your arms to follow in an overhead reaching position. Keep your core tight and engaged the entire time, and don't forget to breathe! Maintain the position for as long as you can.",
+        "reps": 30,
+        "intervals": 3
+    },
+    {
+        "name": "Flutter Kicks",
+        "muscle_group": "core",
+        "body_weight": true,
+        "description": "Lay flat on the floor and place your hands in a diamond position underneath your pelvis (this will help keep your lower back flat when you are performing the movement).Point your toes, contract your abs, and kick your legs like you are swimming. Make sure only to raise your legs a couple of inches above the floor to keep maximal tension on your abdominal muscles.Keep breathing and rapidly fluttering your legs until you feel your core will give out",
+        "reps": 30,
+        "intervals": 3
+    },
+    {
+        "name": "Flutter Kicks",
+        "muscle_group": "core",
+        "body_weight": true,
+        "description": "Lay flat on the floor and place your hands in a diamond position underneath your pelvis (this will help keep your lower back flat when you are performing the movement).Point your toes, contract your abs, and kick your legs like you are swimming. Make sure only to raise your legs a couple of inches above the floor to keep maximal tension on your abdominal muscles.Keep breathing and rapidly fluttering your legs until you feel your core will give out",
+        "reps": 30,
+        "intervals": 3
+    },
+    {
+        "name": "Kettlebell Swing",
+        "muscle_group": "lowerbody",
+        "body_weight": false,
+        "description": "Stand with feet slightly wider than shoulder-width apart. Hold a kettlebell in front of your body with both hands, arms straight.With a slight bend in knees and a flat back, hinge at hips and swing the kettlebell back through legs.Use that momentum to stand and swing the kettlebell out in front of body, up to shoulder height.Thrust hips forward, and engage glutes and core as you stand up straight. When the kettlebell hits shoulder height, knees should be straight and glutes contracted in a full hip extension.Allow the kettlebell to swing back down through legs, while hinging at the hips. That's 1 rep.",
+        "reps": 8,
+        "intervals": 3
+    },
+    {
+        "name": "Sumo Squat",
+        "muscle_group": "lowerbody",
+        "body_weight": false,
+        "description": "Stand with feet shoulder-distance apart, then turn toes open slightly.Hold one kettlebell or dumbbell in front of hips with both hands.Bend knees, reaching hips back, and lower down into a deep squat. Allow arms to hang so that the weight remains under shoulders. Lower until hips are slightly below the level of knees.Pause at the bottom for two seconds, then drive into heels to return to standing. That’s 1 rep.",
+        "reps": 8,
+        "intervals": 3
+    },
+    {
+        "name": "Reverse Lunge",
+        "muscle_group": "lowerbody",
+        "body_weight": false,
+        "description": "Stand with feet hip-width apart, and hold one dumbbell in each hand at sides.Step back with right leg and bend both knees as you lower until knees are both bent at 90-degree angles.Push through left foot to stand.Step back with left leg and bend both knees as you lower until knees are both bent at 90-degree angles.Push through right foot to stand. That's 1 rep.Continue alternating legs.",
+        "reps": 16,
+        "intervals": 3
+    }
+]
