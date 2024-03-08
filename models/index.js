@@ -9,14 +9,14 @@ const DayOfWeekUserExercise = require('./DayOfWeekUserExercise');
 User.belongsToMany(Exercise, {
     through: {
         model: UserExercise,
-        unique: true,
+        unique: false
     }
 });
 
 Exercise.belongsToMany(User, {
     through: {
         model: UserExercise,
-        unique: true,
+        unique: false
     }
 });
 

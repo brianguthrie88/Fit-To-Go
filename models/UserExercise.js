@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class UserExercise extends Model {}
+class UserExercise extends Model { }
 
 UserExercise.init(
   {
@@ -25,7 +25,11 @@ UserExercise.init(
         model: 'Exercise',
         key: 'id',
       },
-    }
+    },
+    day: {
+      type: DataTypes.ENUM("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"),
+      allowNull: false
+    },
   },
   {
     sequelize,
