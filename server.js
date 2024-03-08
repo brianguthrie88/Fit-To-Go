@@ -1,16 +1,41 @@
-// Dependencies
-const express = require('express');
 const path = require('path');
-
-// Sets up the Express App
+const express = require('express');
+const routes = require('./controllers');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+// import sequelize connection
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+// Set up Handlebars.js engine
+const hbs = exphbs.create({});
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+app.use(session(sess));
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-// Sets up the routes
-// app.use(require('./controllers/dish-routes'));
-
-// Starts the server to begin listening
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
+app.use(routes);
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () =>
+    console.log(
+      `\nServer running on port ${PORT}. Visit http://localhost:${PORT} and create an account!`
+    )
+  );
 });
