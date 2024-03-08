@@ -17,25 +17,24 @@ Exercise.init(
     },
     muscle_group: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
-    is_weighted: {
+    body_weight: {
         type: DataTypes.BOOLEAN,
+        allowNull: true,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     reps: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     intervals: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
-    weight: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-    }
   },
   {
     sequelize,
