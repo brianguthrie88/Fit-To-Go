@@ -7,31 +7,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fit2Go</title>
+  <title>Fit To Go</title>
   <link rel="stylesheet" type="text/css" href="/public/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Fit2Go</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>Fit To Go</h1>
+      <h2>Login or create an account!</h2>
+
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+
+
+    <button class="btn" id="logout" >Logout</button>
     {{else}}
-    <a href="/login">Login</a>
+    <a href="/Work-Out-App/public/js/login.js">Login</a>
     {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2></h2>
-    </aside>
-    <div class="">
-      {{{body}}}
-    </div>
+  </header>
+
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
   </main>
+
+  <!-- log out script, IF user is logged in!-->
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
