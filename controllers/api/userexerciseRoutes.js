@@ -1,6 +1,6 @@
 // TODO: Create, update, delete exercises
 const router = require('express').Router();
-const { User, Exercise, UserExercise, DayOfWeek, DayOfWeekUserExercise } = require('../../models');
+const { User, Exercise, UserExercise } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
