@@ -13,20 +13,14 @@ const withAuth = require('../../utils/auth');
 // Route to create new records in UserExercise and DayOfTheWeekUserExercise models
 router.post('/create', withAuth, async (req, res) => {
   try {
-    console.log("HELLLO!!!")
     const userId = req.session.user_id;
     const exerciseId = req.body.exercise_id;
     const day = req.body.day
 
-    console.log({ userId, exerciseId, day })
-
     // Create a new record in UserExercise model
     const userExerciseData = await UserExercise.findOne({ where: { user_id: userId, exercise_id: exerciseId, day } });
 
-    console.log({ userExerciseData })
-
     if (!userExerciseData) {
-      console.log("DAY IS", day)
       const newUserExercise = await UserExercise.create({ user_id: userId, exercise_id: exerciseId, day });
       res.status(200).json(newUserExercise);
       return;
