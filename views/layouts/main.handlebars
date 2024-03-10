@@ -6,31 +6,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fit To Go</title>
-  <link rel="stylesheet" type="text/css" href="/public/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/jass.css">
+ 
 </head>
 
 <body>
+  
   <header class="display-flex justify-space-between align-center p-2">
+    
     <h1>Fit To Go</h1>
-      <h2>Login or create an account!</h2>
+      <p>Welcome to Fit To Go! Your personalized daily workout planner. To get started, please log in or sign up below.</p>
 
-    {{#if loggedIn}}
-
-
-    <button class="btn" id="logout" >Logout</button>
-    {{else}}
-    <a href="/Work-Out-App/public/js/login.js">Login</a>
+      {{#if logged_in}}
+    
+    <nav>
+      <button class="btn" id="logout">Logout</button>
+    </nav>
+    
     {{/if}}
+  
   </header>
 
-  <main class="container container-fluid mt-5">
+  <main class="container">
+    
     {{{ body }}}
+  
   </main>
 
   <!-- log out script, IF user is logged in!-->
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
 </body>
 
 </html>
