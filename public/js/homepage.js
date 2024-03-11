@@ -1,7 +1,3 @@
-var today = dayjs();
-$('date').text(today.format('MMM D, YYYY'));
-
-// b1 link to schedule
-// b2 link to workouts
-// b3 link to workouts
-// b4link to settings
+//add to an array all excersies clicked on
+//add event listener to button, when clicked to save workout then grab exercises added and send to back end in fecth req 
+//need create exercise endpoint to add new exercises

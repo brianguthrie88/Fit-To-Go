@@ -21,8 +21,9 @@ router.get('/', async (req, res) => {
       });
       const user = userData.get({ plain: true })
       console.log(user);
-  
-      res.render('homepage', {exercises: user.Exercises, user, logged_in: req.session.logged_in});
+      const exerciseData = await Exercise.findAll();
+      const availibleExercises = exerciseData.map(exercise => exercise.get({ plain: true }));
+      res.render('homepage', {exercises: user.Exercises, user, logged_in: req.session.logged_in, availibleExercises});
     }
   
     catch (err) {
