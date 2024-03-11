@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Exercise } = require('../models');
+const { User, Exercise, UserExercise } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const userId = req.session.user_id;
   
     if (!userId) {
-      res.status(401).json('You must log in to access the schedule')
+      res.redirect('/login');
       return;
     }
   
@@ -15,14 +15,14 @@ router.get('/', async (req, res) => {
       const userData = await User.findByPk(userId, {
         include: [
           {
-            all: true,
-            group: 'exercise_id'
+            model: Exercise, through: UserExercise
           }
         ],
       });
       const user = userData.get({ plain: true })
+      console.log(user);
   
-      res.status(200).json(user)
+      res.render('homepage', {exercises: user.Exercises, user, logged_in: req.session.logged_in});
     }
   
     catch (err) {
@@ -30,12 +30,11 @@ router.get('/', async (req, res) => {
       res.status(500).json(err)
     }
   });
-
-
+  
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/homepage');
+      res.redirect('/');
       return;
     }
   
