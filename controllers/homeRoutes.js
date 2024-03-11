@@ -21,8 +21,10 @@ router.get('/', async (req, res) => {
       });
       const user = userData.get({ plain: true })
       console.log(user);
-  
-      res.render('homepage', {exercises: user.Exercises, user, logged_in: req.session.logged_in});
+      const exerciseData = await Exercise.findAll()
+      const exercises = exerciseData.map(exercise => exercise.get({plain: true}))
+      console.log(exercises);
+      res.render('homepage', {chooseExercises: exercises, exercises: user.Exercises, user, logged_in: req.session.logged_in});
     }
   
     catch (err) {
@@ -30,6 +32,12 @@ router.get('/', async (req, res) => {
       res.status(500).json(err)
     }
   });
+
+  router.get('/schedule', async (req, res) => {
+    const exerciseData = await Exercise.findAll()
+    const exercises = exerciseData.map(exercise => exercise.get({plain: true}))
+    res.render("profile", {exercises})
+  })
   
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
