@@ -11,7 +11,7 @@ const withAuth = require('../../utils/auth');
 // TODO: Use the DayOfTheWeekUserExercise to create a new record in the model which inserts the newly created userExecerise.id and the day id (req.body.day_id)
 
 // Route to create new records in UserExercise and DayOfTheWeekUserExercise models
-router.post('/create', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const userId = req.session.user_id;
     const exerciseId = req.body.exercise_id;

@@ -1,17 +1,54 @@
 <!-- Loop over each object in the workouts array-->
-<h1>{{user.name}}</h1>
-{{#each exercises as |exercise| }}
-
- <div class="card">
-  <div class="card-content">
-    <div class="content">
-      <p>{{exercise.name}}</p>
-      <p>{{exercise.description}}</p>
-      <p>{{exercise.reps}} </p>
-      <p>{{exercise.muscle_group}}</p>
-      <p>{{exercise.description}}</p>
-    </div>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
-{{/each}}
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Pick your exercises:</h3>
+    <form class="form new-exercise-schedule">
+      <div class="form-group">
+        <label for="cars">Choose a Exercise:</label>
+        <select name="exercises" id="exercises">
+            {{#each chooseExercises as |exercise|}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cars">Choose a Day:</label>
+        <select name="day" id="day">
+            <option value="MONDAY">Monday</option>
+            <option value="TUESDAY">Tuesday</option>
+            <option value="WEDNESDAY">Wednesday</option>
+            <option value="THURSDAY">Thursday</option>
+            <option value="FRIDAY">Friday</option>
+            <option value="SATURDAY">Saturday</option>
+            <option value="SUNDAY">Sunday</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+{{#if exercises.length}}
+  <div class="row">
+    {{#each exercises as |exercise|}}
+    <div class="card">
+      <div class="card-content">
+        <h4>{{exercise.name}}</h4>
+        <h4>{{exercise.description}}</h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+<script src="./js/homepage.js"></script>
